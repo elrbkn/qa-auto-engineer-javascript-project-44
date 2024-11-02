@@ -1,4 +1,4 @@
-import { userName } from '/home/rybkina01/qa-auto-engineer-javascript-project-44/src/cli.js';
+import { userName } from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
 
