@@ -21,8 +21,7 @@ while (correctAnswersCount < 3) {
   const getAnswer = readlineSync.question('Your answer: ');
 
   // проверяем четность
-  const checkEvenness = (number) => (number % 2 === 0 ? 'yes' : 'no') // Возвращаем 'yes', если четное, иначе 'no'
-    ;
+  const checkEvenness = (number) => (number % 2 === 0 ? 'yes' : 'no'); // Возвращаем 'yes', если четное, иначе 'no'
 
   // Получаем правильный ответ
   const correctAnswer = checkEvenness(getRandomNumber);
