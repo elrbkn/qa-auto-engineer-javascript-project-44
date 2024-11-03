@@ -32,7 +32,7 @@ const handleAnswer = (userAnswer, correctAnswer, userName, correctAnswersCount) 
       return { correctAnswersCount, finished: true };
     }
   } else {
-    console.log(`Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".`);
+    console.log(`Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`);
     // Завершение игры при неправильном ответе
     return { correctAnswersCount, finished: true };
   }
