@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/elrbkn/qa-auto-engineer-javascript-project-44#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
     "lodash": "^4.6.2"
   },
   "devDependencies": {
