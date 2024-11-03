@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { playGame } from '../index.js';
+import { playGameEven } from '../index.js';
 
 // Запускаем игру
-playGame();
+playGameEven();
