@@ -41,7 +41,7 @@ const handleAnswer = (userAnswer, correctAnswer, userName, correctAnswersCount) 
 };
 
 // brain-even
-export const playGame = () => {
+export const playGameEven = () => {
   const userName = greeting();
   let correctAnswersCount = 0;
   // Поясняем смысл
