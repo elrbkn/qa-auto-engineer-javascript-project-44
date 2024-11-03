@@ -9,4 +9,8 @@ npm install @hexlet/code
 ```
 
 ## brain-even
+```bash
+brain-eve
+```
+Суть игры в: пользователю показывается случайное число. И ему нужно ответить yes, если число чётное, или no — если нечётное. В случае, если пользователь даст неверный ответ, игра завершается
 <a href="https://asciinema.org/a/KzBrnemKJvXUP7EY6UlJtMBbv" target="_blank"><img src="https://asciinema.org/a/KzBrnemKJvXUP7EY6UlJtMBbv.svg" /></a>
