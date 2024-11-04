@@ -2,11 +2,12 @@ import readlineSync from 'readline-sync';
 import { greeting, getRandomNumber, checkEvenness, handleAnswer } from '../index.js';
 // brain-even
 export const playGameEven = () => {
+    //Приветствуем
     const userName = greeting();
-    let correctAnswersCount = 0;
     // Поясняем смысл
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     // Цикл игры
+    let correctAnswersCount = 0;
     while (correctAnswersCount < 3) {
       // Получаем число
       const number = getRandomNumber();
@@ -16,7 +17,8 @@ export const playGameEven = () => {
       // Проверяем четность
       const correctAnswer = checkEvenness(number);
       // Сверяем результаты
-      const result = handleAnswer(userAnswer, correctAnswer, userName, correctAnswersCount);
+      const incorrectMessage = `Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`
+      const result = handleAnswer(userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage);
       correctAnswersCount = result.correctAnswersCount;
       // Закрываем цикл
       if (result.finished) {
@@ -24,3 +26,4 @@ export const playGameEven = () => {
       }
     }
   };
+
