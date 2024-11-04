@@ -15,9 +15,9 @@ export const playGameEven = () => {
       // Получаем ответ пользователя
       const userAnswer = readlineSync.question('Your answer: ');
       // Проверяем четность
-      const correctAnswer = checkEvenness(number);
+      const correctAnswer = String(checkEvenness(number));
       // Сверяем результаты
-      const incorrectMessage = `Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`
+      const incorrectMessage = `Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
       const result = handleAnswer(userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage);
       correctAnswersCount = result.correctAnswersCount;
       // Закрываем цикл

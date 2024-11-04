@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import { greeting, getRandomNumber, getRandomOperator, getResult, handleAnswer } from '../index.js';
-//brain-calc
+// brain-calc
 export const playGameCalc = () => {
-    //Приветствуем
+    // Приветствуем
     const userName = greeting();
     // Поясняем смысл
     console.log('What is the result of the expression?');
@@ -20,7 +20,7 @@ export const playGameCalc = () => {
         //Вычисляем ответ
         const correctAnswer = String(getResult(randomNumber1, randomOperator, randomNumber2));
         // Сверяем результаты
-        const incorrectMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
+        const incorrectMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
         const result = handleAnswer(userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage);
         correctAnswersCount = result.correctAnswersCount;
         // Закрываем цикл
