@@ -23,16 +23,15 @@ export const handleAnswer = (userAnswer, correctAnswer, userName, correctAnswers
   if (userAnswer === correctAnswer) {
     console.log('Correct!');
     correctAnswersCount += 1;
-    // Проверяем, достигли ли мы 3 правильных ответа
     if (correctAnswersCount === 3) {
+      // Завершение игры при достижении 3      
       console.log(`Congratulations, ${userName}!`);
-      // Завершение игры при достижении 3
       return { correctAnswersCount, finished: true };
     }
   } else {
-    console.log(incorrectMessage);
-    // Завершение игры при неправильном ответе
-    return { correctAnswersCount, finished: true };
+      // Завершение игры при неправильном ответе
+      console.log(incorrectMessage);
+      return { correctAnswersCount, finished: true };
   }
   // Игра продолжается
   return { correctAnswersCount, finished: false };
@@ -48,6 +47,7 @@ export const getRandomOperator = () => {
 
 // Функция вычисления результата
 export const getResult = (num1, operator, num2) => {
+  //Определяем значение оператора
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -56,4 +56,15 @@ export const getResult = (num1, operator, num2) => {
     case '*':
       return num1 * num2;
   }
+};
+
+//Функция вычисления НОД
+export const gcd = (num1, num2) => {
+  //Алгоритм Евклида
+  while (num2 !== 0) {
+      let temp = num2;
+      num2 = num1 % num2;
+      num1 = temp;
+  }
+  return num1;
 };
