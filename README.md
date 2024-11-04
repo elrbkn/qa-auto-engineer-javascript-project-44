@@ -21,3 +21,10 @@ brain-calc
 ```
 Суть игры: пользователю показывается случайный пример. И ему нужно пример решить и записать ответ. Игра длится до 3 правильных ответов. В случае, если пользователь даст неверный ответ, игра завершается.
 <a href="https://asciinema.org/a/nsCxx8TqqfsEzgo2IqdFJMdVT" target="_blank"><img src="https://asciinema.org/a/nsCxx8TqqfsEzgo2IqdFJMdVT.svg" /></a>
+
+## brain-gcd
+```bash
+brain-gcd
+```
+Суть игры: пользователю показывается 2 случайных числа. И ему нужно найти НОД и записать ответ. Игра длится до 3 правильных ответов. В случае, если пользователь даст неверный ответ, игра завершается.
+<a href="https://asciinema.org/a/c6xjIUNHjW2pwmWA4z2LGpCAx" target="_blank"><img src="https://asciinema.org/a/c6xjIUNHjW2pwmWA4z2LGpCAx.svg" /></a>
