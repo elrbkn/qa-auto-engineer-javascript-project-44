@@ -9,15 +9,13 @@ export const greeting = () => {
 };
 
 // Функция для генерации случайного числа от 1 до 100
-export const getRandomNumber = () => {
-    return Math.floor(Math.random() * 100) + 1;
-};
+export const getRandomNumber = () => Math.floor(Math.random() * 100) + 1;
 
 // Функция для проверки четности
-export const checkEvenness = (number) => {
-    // Возвращаем 'yes', если четное, иначе 'no'
-    return number % 2 === 0 ? 'yes' : 'no';
-};
+export const checkEvenness = (number) =>
+// Возвращаем 'yes', если четное, иначе 'no'
+  (number % 2 === 0 ? 'yes' : 'no')
+;
 
 // Функция подсчета ответов
 export const handleAnswer = (userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage) => {
@@ -40,7 +38,6 @@ export const handleAnswer = (userAnswer, correctAnswer, userName, correctAnswers
   return { correctAnswersCount, finished: false };
 };
 
-
 // Функция для генерации случайного математического оператора
 export const getRandomOperator = () => {
   const operators = ['+', '-', '*'];
@@ -51,14 +48,12 @@ export const getRandomOperator = () => {
 
 // Функция вычисления результата
 export const getResult = (num1, operator, num2) => {
-    switch (operator) {
-      case '+':
-        return num1 + num2;
-      case '-':
-        return num1 - num2;
-      case '*':
-        return num1 * num2;
-    }
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+  }
 };
-
-
