@@ -18,3 +18,7 @@ ehthumbs.db
 # Временные файлы
 tmp/
 temp/
+
+# Аскинема
+demo.cast
+games/demo.cast
