@@ -8,7 +8,7 @@ export const playGameProgression = () => {
   // Приветствуем
   const userName = greeting();
   // Поясняем смысл
-  console.log('Find the greatest common divisor of given numbers.');
+  console.log('What number is missing in the progression?');
   // Цикл игры
   let correctAnswersCount = 0;
   while (correctAnswersCount < 3) {
