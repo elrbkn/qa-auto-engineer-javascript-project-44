@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import {
   greeting, getRandomNumber, gcd, handleAnswer,
 } from '../index.js';
+
 // brain-even
 export const playGameGcd = () => {
   // Приветствуем

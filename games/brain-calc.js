@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import {
   greeting, getRandomNumber, getRandomOperator, getResult, handleAnswer,
 } from '../index.js';
+
 // brain-calc
 export const playGameCalc = () => {
   // Приветствуем
