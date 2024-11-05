@@ -28,3 +28,10 @@ brain-gcd
 ```
 Суть игры: пользователю показывается 2 случайных числа. И ему нужно вычислить и ввести наибольший общий делитель этих чисел и записать ответ. Игра длится до 3 правильных ответов. В случае, если пользователь даст неверный ответ, игра завершается.
 <a href="https://asciinema.org/a/c6xjIUNHjW2pwmWA4z2LGpCAx" target="_blank"><img src="https://asciinema.org/a/c6xjIUNHjW2pwmWA4z2LGpCAx.svg" /></a>
+
+## brain-progression
+```bash
+brain-progression
+```
+Суть игры: пользователю показывается ряд чисел, образующий арифметическую прогрессию. Одно из чисел скрыто точками, игрок должен определить это число и записать ответ. Игра длится до 3 правильных ответов. В случае, если пользователь даст неверный ответ, игра завершается.
+<a href="https://asciinema.org/a/eaeXKYPoA7OV4RiKFBgKZiz8U" target="_blank"><img src="https://asciinema.org/a/eaeXKYPoA7OV4RiKFBgKZiz8U.svg" /></a>
