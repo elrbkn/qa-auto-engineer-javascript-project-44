@@ -82,3 +82,18 @@ export const generateRandomArray = () => {
 
 // Функция для изменнения значения в массиве
 export const replaceValueInArray = (array, oldValue, newValue) => array.map((item) => (item === oldValue ? newValue : item));
+
+// Функция проверки простого числа 
+export const isPrime = (num) => {
+  // Проверка на числа меньше 2
+  if (num <= 1) {
+      return 'no';
+  }
+  // Проверка делителей от 2 до квадратного корня из n
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+      if (num % i === 0) {
+          return 'no';
+      }
+  }
+  return 'yes'; 
+};
