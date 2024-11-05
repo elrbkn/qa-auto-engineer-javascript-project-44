@@ -18,7 +18,7 @@ export const playGameProgression = () => {
     const randomIndex = Math.floor(Math.random() * array.length);
     const correctAnswer = array[randomIndex];
     const arrayHidden = replaceValueInArray(array, correctAnswer, '..');
-    console.log(`Question: ${arrayHidden}`);
+    console.log(`Question: ${arrayHidden.join(' ')}`);
     // Получаем ответ пользователя
     const userAnswer = readlineSync.question('Your answer: ');
     // Проверяем четность
