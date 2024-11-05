@@ -15,23 +15,30 @@ export const getRandomNumber = () => Math.floor(Math.random() * 100) + 1;
 export const checkEvenness = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
 // Функция подсчета ответов
-export const handleAnswer = (userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage) => {
+export const handleAnswer = (
+  userAnswer,
+  correctAnswer,
+  userName,
+  correctAnswersCount,
+  incorrectMessage,
+) => {
+  let updatedCorrectAnswersCount = correctAnswersCount;
   // Сравниваем ответы
   if (userAnswer === correctAnswer) {
     console.log('Correct!');
-    correctAnswersCount += 1;
-    if (correctAnswersCount === 3) {
+    updatedCorrectAnswersCount += 1;
+    if (updatedCorrectAnswersCount === 3) {
       // Завершение игры при достижении 3
       console.log(`Congratulations, ${userName}!`);
-      return { correctAnswersCount, finished: true };
+      return { correctAnswersCount: updatedCorrectAnswersCount, finished: true };
     }
   } else {
     // Завершение игры при неправильном ответе
     console.log(incorrectMessage);
-    return { correctAnswersCount, finished: true };
+    return { correctAnswersCount: updatedCorrectAnswersCount, finished: true };
   }
   // Игра продолжается
-  return { correctAnswersCount, finished: false };
+  return { correctAnswersCount: updatedCorrectAnswersCount, finished: false };
 };
 
 // Функция для генерации случайного математического оператора
@@ -44,17 +51,18 @@ export const getRandomOperator = () => {
 
 // Функция вычисления результата математической операции
 export const getResult = (num1, operator, num2) => {
+  const firstNumber = num1;
+  const secondNumber = num2;
   // Определяем значение оператора
   switch (operator) {
     case '+':
-      return num1 + num2;
+      return firstNumber + secondNumber;
     case '-':
-      return num1 - num2;
+      return firstNumber - secondNumber;
     case '*':
-      return num1 * num2;
-      default:
-        // Обработка случая по умолчанию
-        break;  
+      return firstNumber * secondNumber;
+    default:
+      return null; // Возвращаем null для нераспознанного оператора
   }
 };
 
@@ -84,7 +92,7 @@ export const generateRandomArray = () => {
 };
 
 // Функция для изменнения значения в массиве
-export const replaceValueInArray = (array, oldValue, newValue) => array.map((item) => (item === oldValue ? newValue : item));
+export const replaceValueInArray = (arr, old, nw) => arr.map((item) => (item === old ? nw : item));
 
 // Функция проверки простого числа
 export const isPrime = (num) => {

@@ -4,7 +4,7 @@ import {
 } from '../index.js';
 
 // brain-calc
-export const playGameCalc = () => {
+const playGameCalc = () => {
   // Приветствуем
   const userName = greeting();
   // Поясняем смысл
@@ -24,7 +24,13 @@ export const playGameCalc = () => {
     const correctAnswer = String(getResult(randomNumber1, randomOperator, randomNumber2));
     // Сверяем результаты
     const incorrectMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-    const result = handleAnswer(userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage);
+    const result = handleAnswer(
+      userAnswer,
+      correctAnswer,
+      userName,
+      correctAnswersCount,
+      incorrectMessage,
+    );
     correctAnswersCount = result.correctAnswersCount;
     // Закрываем цикл
     if (result.finished) {
@@ -32,3 +38,5 @@ export const playGameCalc = () => {
     }
   }
 };
+
+export default playGameCalc;

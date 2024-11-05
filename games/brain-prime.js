@@ -4,7 +4,7 @@ import {
 } from '../index.js';
 
 // brain-even
-export const playGamePrime = () => {
+const playGamePrime = () => {
   // Приветствуем
   const userName = greeting();
   // Поясняем смысл
@@ -21,7 +21,13 @@ export const playGamePrime = () => {
     const correctAnswer = isPrime(number);
     // Сверяем результаты
     const incorrectMessage = `Answer "${userAnswer}" if given number is prime, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
-    const result = handleAnswer(userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage);
+    const result = handleAnswer(
+      userAnswer,
+      correctAnswer,
+      userName,
+      correctAnswersCount,
+      incorrectMessage,
+    );
     correctAnswersCount = result.correctAnswersCount;
     // Закрываем цикл
     if (result.finished) {
@@ -29,3 +35,5 @@ export const playGamePrime = () => {
     }
   }
 };
+
+export default playGamePrime;

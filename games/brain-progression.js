@@ -4,7 +4,7 @@ import {
 } from '../index.js';
 
 // brain-even
-export const playGameProgression = () => {
+const playGameProgression = () => {
   // Приветствуем
   const userName = greeting();
   // Поясняем смысл
@@ -25,7 +25,13 @@ export const playGameProgression = () => {
     const correctAnswerString = String(correctAnswer);
     // Сверяем результаты
     const incorrectMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-    const result = handleAnswer(userAnswer, correctAnswerString, userName, correctAnswersCount, incorrectMessage);
+    const result = handleAnswer(
+      userAnswer,
+      correctAnswerString,
+      userName,
+      correctAnswersCount,
+      incorrectMessage,
+    );
     correctAnswersCount = result.correctAnswersCount;
     // Закрываем цикл
     if (result.finished) {
@@ -33,3 +39,5 @@ export const playGameProgression = () => {
     }
   }
 };
+
+export default playGameProgression;

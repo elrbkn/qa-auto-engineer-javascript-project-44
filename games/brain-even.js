@@ -4,7 +4,7 @@ import {
 } from '../index.js';
 
 // brain-even
-export const playGameEven = () => {
+const playGameEven = () => {
   // Приветствуем
   const userName = greeting();
   // Поясняем смысл
@@ -21,7 +21,13 @@ export const playGameEven = () => {
     const correctAnswer = String(checkEvenness(number));
     // Сверяем результаты
     const incorrectMessage = `Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
-    const result = handleAnswer(userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage);
+    const result = handleAnswer(
+      userAnswer,
+      correctAnswer,
+      userName,
+      correctAnswersCount,
+      incorrectMessage,
+    );
     correctAnswersCount = result.correctAnswersCount;
     // Закрываем цикл
     if (result.finished) {
@@ -29,3 +35,5 @@ export const playGameEven = () => {
     }
   }
 };
+
+export default playGameEven;
