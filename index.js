@@ -11,11 +11,8 @@ export const greeting = () => {
 // Функция для генерации случайного числа от 1 до 100
 export const getRandomNumber = () => Math.floor(Math.random() * 100) + 1;
 
-// Функция для проверки четности
-export const checkEvenness = (number) =>
-// Возвращаем 'yes', если четное, иначе 'no'
-  (number % 2 === 0 ? 'yes' : 'no')
-;
+// Функция для проверки четности, 'yes' если четное, иначе 'no'
+export const checkEvenness = (number) => number % 2 === 0 ? 'yes' : 'no';
 
 // Функция подсчета ответов
 export const handleAnswer = (userAnswer, correctAnswer, userName, correctAnswersCount, incorrectMessage) => {
@@ -45,7 +42,7 @@ export const getRandomOperator = () => {
   return randomOperator;
 };
 
-// Функция вычисления результата
+// Функция вычисления результата математической операции 
 export const getResult = (num1, operator, num2) => {
   //Определяем значение оператора
   switch (operator) {
@@ -58,7 +55,7 @@ export const getResult = (num1, operator, num2) => {
   }
 };
 
-//Функция вычисления НОД
+// Функция вычисления НОД
 export const gcd = (num1, num2) => {
   //Алгоритм Евклида
   while (num2 !== 0) {
@@ -67,4 +64,23 @@ export const gcd = (num1, num2) => {
       num1 = temp;
   }
   return num1;
+};
+
+// Функция генерации массива арифметической прогрессии
+export const generateRandomArray = () => {
+  // Определяем начало и шаг
+  const start = Math.floor(Math.random() * 100) + 1;
+  const step = Math.floor(Math.random() * 10) + 1;
+  // Создаем массив
+  const array = [];
+  // Заполняем массив 10 числами
+  for (let i = 0; i < 10; i++) {
+      array.push(start + (i * step));
+  }
+  return array;
+};
+
+// Функция для изменнения значения в массиве
+export const replaceValueInArray = (array, oldValue, newValue) => {
+  return array.map(item => item === oldValue ? newValue : item)
 };
