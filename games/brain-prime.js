@@ -17,7 +17,7 @@ export const playGamePrime = () => {
     console.log(`Question: ${number}`);
     // Получаем ответ пользователя
     const userAnswer = readlineSync.question('Your answer: ');
-    // Проверяем простое ли число 
+    // Проверяем простое ли число
     const correctAnswer = isPrime(number);
     // Сверяем результаты
     const incorrectMessage = `Answer "${userAnswer}" if given number is prime, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
