@@ -34,7 +34,7 @@ brain-gcd
 brain-progression
 ```
 Суть игры: пользователю показывается ряд чисел, образующий арифметическую прогрессию. Одно из чисел скрыто точками, игрок должен определить это число и записать ответ. Игра длится до 3 правильных ответов. В случае, если пользователь даст неверный ответ, игра завершается.
-<a href="https://asciinema.org/a/eaeXKYPoA7OV4RiKFBgKZiz8U" target="_blank"><img src="https://asciinema.org/a/eaeXKYPoA7OV4RiKFBgKZiz8U.svg" /></a>
+<a href="https://asciinema.org/a/0LZgUBIEbcdnAEMEZ3KFj7GcR" target="_blank"><img src="https://asciinema.org/a/0LZgUBIEbcdnAEMEZ3KFj7GcR.svg" /></a>
 
 ## brain-progression
 ```bash
