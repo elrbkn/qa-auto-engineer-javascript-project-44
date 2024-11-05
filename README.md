@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/b4301d52972287f628e1/maintainability)](https://codeclimate.com/github/elrbkn/qa-auto-engineer-javascript-project-44/maintainability)
 
 ## Setup
-
+Проект представляет набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. 
 ```bash
 npm install @hexlet/code
 ```
