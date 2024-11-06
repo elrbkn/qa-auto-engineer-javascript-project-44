@@ -1,42 +1,24 @@
-import readlineSync from 'readline-sync';
-import {
-  greeting, getRandomNumber, getRandomOperator, getResult, handleAnswer,
-} from '../../index.js';
+import { getRandomNumber, getRandomOperator, getResult } from '../../index.js';
+import playGame from '../gameUtils.js';
 
-// brain-calc
+// Задаем вопрос
+const generateQuestion = () => {
+  const randomNumber1 = getRandomNumber();
+  const randomNumber2 = getRandomNumber();
+  const randomOperator = getRandomOperator();
+  const example = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
+  const correctAnswer = getResult(randomNumber1, randomOperator, randomNumber2);
+  return { question: example, correctAnswer };
+};
+
+// Задаем сообшения
+const gameDescription = 'What is the result of the expression?';
+
+const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
+
+// Запускаем игру
 const playGameCalc = () => {
-  // Приветствуем
-  const userName = greeting();
-  // Поясняем смысл
-  console.log('What is the result of the expression?');
-  // Цикл игры
-  let correctAnswersCount = 0;
-  while (correctAnswersCount < 3) {
-    // Получаем пример
-    const randomNumber1 = getRandomNumber();
-    const randomNumber2 = getRandomNumber();
-    const randomOperator = getRandomOperator();
-    const example = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-    console.log(`Question: ${example}`);
-    // Получаем ответ пользователя
-    const userAnswer = readlineSync.question('Your answer: ');
-    // Вычисляем ответ
-    const correctAnswer = String(getResult(randomNumber1, randomOperator, randomNumber2));
-    // Сверяем результаты
-    const incorrectMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-    const result = handleAnswer(
-      userAnswer,
-      correctAnswer,
-      userName,
-      correctAnswersCount,
-      incorrectMessage,
-    );
-    correctAnswersCount = result.correctAnswersCount;
-    // Закрываем цикл
-    if (result.finished) {
-      break;
-    }
-  }
+  playGame(gameDescription, generateQuestion, generateIncorrectMessageEvenOdd);
 };
 
 export default playGameCalc;

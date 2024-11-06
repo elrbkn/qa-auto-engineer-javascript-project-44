@@ -1,43 +1,23 @@
-import readlineSync from 'readline-sync';
-import {
-  greeting, generateRandomArray, replaceValueInArray, handleAnswer,
-} from '../../index.js';
+import { generateRandomArray, replaceValueInArray } from '../../index.js';
+import playGame from '../gameUtils.js';
 
-// brain-even
+// Задаем вопрос
+const generateQuestion = () => {
+  const array = generateRandomArray();
+  const randomIndex = Math.floor(Math.random() * array.length);
+  const correctAnswer = array[randomIndex];
+  const arrayHidden = replaceValueInArray(array, correctAnswer, '..').join(' ');
+  return { question: arrayHidden, correctAnswer };
+};
+
+// Задаем сообшения
+const gameDescription = 'What number is missing in the progression?';
+
+const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
+
+// Запускаем игру
 const playGameProgression = () => {
-  // Приветствуем
-  const userName = greeting();
-  // Поясняем смысл
-  console.log('What number is missing in the progression?');
-  // Цикл игры
-  let correctAnswersCount = 0;
-  while (correctAnswersCount < 3) {
-    // Получаем массив
-    const array = generateRandomArray();
-    // Определяем скрываемое число
-    const randomIndex = Math.floor(Math.random() * array.length);
-    const correctAnswer = array[randomIndex];
-    const arrayHidden = replaceValueInArray(array, correctAnswer, '..');
-    console.log(`Question: ${arrayHidden.join(' ')}`);
-    // Получаем ответ пользователя
-    const userAnswer = readlineSync.question('Your answer: ');
-    // Проверяем четность
-    const correctAnswerString = String(correctAnswer);
-    // Сверяем результаты
-    const incorrectMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-    const result = handleAnswer(
-      userAnswer,
-      correctAnswerString,
-      userName,
-      correctAnswersCount,
-      incorrectMessage,
-    );
-    correctAnswersCount = result.correctAnswersCount;
-    // Закрываем цикл
-    if (result.finished) {
-      break;
-    }
-  }
+  playGame(gameDescription, generateQuestion, generateIncorrectMessageEvenOdd);
 };
 
 export default playGameProgression;
