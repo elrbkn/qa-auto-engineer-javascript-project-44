@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   greeting, getRandomNumber, isPrime, handleAnswer,
-} from '../index.js';
+} from '../../index.js';
 
 // brain-even
 const playGamePrime = () => {

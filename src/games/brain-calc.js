@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   greeting, getRandomNumber, getRandomOperator, getResult, handleAnswer,
-} from '../index.js';
+} from '../../index.js';
 
 // brain-calc
 const playGameCalc = () => {
