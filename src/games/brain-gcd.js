@@ -1,5 +1,18 @@
-import { getRandomNumber, gcd } from '../../index.js';
 import playGame from '../gameUtils.js';
+import getRandomNumber from '../utils.js';
+
+// Функция вычисления НОД
+const gcd = (a, b) => {
+  let num1 = a;
+  let num2 = b;
+  // Алгоритм Евклида
+  while (num2 !== 0) {
+    const temp = num2;
+    num2 = num1 % num2;
+    num1 = temp;
+  }
+  return num1;
+};
 
 // Задаем вопрос
 const generateQuestion = () => {
@@ -13,7 +26,7 @@ const generateQuestion = () => {
 // Задаем сообшения
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
+const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
 
 // Запускаем игру
 const playGameGcd = () => {
