@@ -1,37 +1,35 @@
 import readlineSync from 'readline-sync';
 import greeting from '../index.js';
 
-const playGame = (gameDescription, generateQuestion, generateIncorrectMessage) => {
+const playGame = (gameDescription, generateQuestion, generateIncorrectMessage, roundsCount = 3) => {
   // Приветсвие и описание
   const userName = greeting();
   console.log(gameDescription);
   // Начало игры
-  for (let correctAnswersCount = 0; correctAnswersCount < 3;) {
+  for (let round = 0; round < roundsCount; round += 1) {
     // Формируем вопрос
     const { question, correctAnswer } = generateQuestion();
     console.log(`Question: ${question}`);
     // Получаем ответ
     const userAnswer = readlineSync.question('Your answer: ');
-    // Сверяем результаты
-    const incorrectMessage = generateIncorrectMessage(userAnswer, String(correctAnswer), userName);
-    // Функция подсчета ответов
-    let updatedCorrectAnswersCount = correctAnswersCount;
     // Сравниваем ответы
     if (userAnswer === String(correctAnswer)) {
       console.log('Correct!');
-      updatedCorrectAnswersCount += 1;
-      if (updatedCorrectAnswersCount === 3) {
-        // Завершение игры при достижении 3
-        console.log(`Congratulations, ${userName}!`);
-        break;
-      }
     } else {
       // Завершение игры при неправильном ответе
+      // Ответа имеет 3 варианта, в зависимости от игры, не 1 :(
+      const incorrectMessage = generateIncorrectMessage(
+        userAnswer,
+        String(correctAnswer),
+        userName,
+      );
       console.log(incorrectMessage);
       break;
     }
-    // Обновляем счетчик правильных ответов
-    correctAnswersCount = updatedCorrectAnswersCount;
+    // Если это последний раунд, поздравляем пользователя
+    if (round === roundsCount - 1) {
+      console.log(`Congratulations, ${userName}!`);
+    }
   }
 };
 
