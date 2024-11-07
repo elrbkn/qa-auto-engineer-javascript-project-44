@@ -17,7 +17,8 @@ const playGame = (gameDescription, generateQuestion, generateIncorrectMessage, r
       console.log('Correct!');
     } else {
       // Завершение игры при неправильном ответе
-      // сообщшение имеет 3 варианта, в зависимости от игры, не 1, у even и prime оно немного другое :(
+      // сообщшение имеет 3 варианта, в зависимости от игры, не 1
+      // у even и prime оно немного другое :(
       const incorrectMessage = generateIncorrectMessage(
         userAnswer,
         String(correctAnswer),
