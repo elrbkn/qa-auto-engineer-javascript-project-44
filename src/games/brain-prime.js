@@ -1,7 +1,6 @@
 import playGame from '../gameUtils.js';
 import getRandomNumber from '../utils.js';
 
-
 // Функция проверки простого числа
 const isPrime = (num) => {
   // Проверка на числа меньше 2

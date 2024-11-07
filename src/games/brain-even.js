@@ -1,7 +1,6 @@
 import playGame from '../gameUtils.js';
 import getRandomNumber from '../utils.js';
 
-
 // Функция для проверки четности, 'yes' если четное, иначе 'no'
 const isEvenness = (number) => (number % 2 === 0 ? 'yes' : 'no');
 

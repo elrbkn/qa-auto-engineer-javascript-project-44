@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
-import { greeting } from '../index.js';
+import greeting from '../index.js';
 
 const playGame = (gameDescription, generateQuestion, generateIncorrectMessage) => {
   // Приветсвие и описание
   const userName = greeting();
   console.log(gameDescription);
   // Начало игры
-  for (let correctAnswersCount = 0; correctAnswersCount < 3; ) {
+  for (let correctAnswersCount = 0; correctAnswersCount < 3;) {
     // Формируем вопрос
     const { question, correctAnswer } = generateQuestion();
     console.log(`Question: ${question}`);
