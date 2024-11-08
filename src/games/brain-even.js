@@ -14,11 +14,10 @@ const generateQuestion = () => {
 // Задаем сообшения
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `Answer "${userAnswer}" if the number is even, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
 
 // Запускаем игру
 const playGameEven = () => {
-  playGame(gameDescription, generateQuestion, generateIncorrectMessageEvenOdd);
+  playGame(gameDescription, generateQuestion);
 };
 
 export default playGameEven;

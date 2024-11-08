@@ -29,11 +29,9 @@ const generateQuestion = () => {
 // Задаем сообшения
 const gameDescription = 'What number is missing in the progression?';
 
-const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-
 // Запускаем игру
 const playGameProgression = () => {
-  playGame(gameDescription, generateQuestion, generateIncorrectMessageEvenOdd);
+  playGame(gameDescription, generateQuestion);
 };
 
 export default playGameProgression;

@@ -26,11 +26,9 @@ const generateQuestion = () => {
 // Задаем сообшения
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-
 // Запускаем игру
 const playGameGcd = () => {
-  playGame(gameDescription, generateQuestion, generateIncorrectMessageEvenOdd);
+  playGame(gameDescription, generateQuestion);
 };
 
 export default playGameGcd;

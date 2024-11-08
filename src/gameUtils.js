@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import greeting from '../index.js';
 
-const playGame = (gameDescription, generateQuestion, generateIncorrectMessage, roundsCount = 3) => {
+const playGame = (gameDescription, generateQuestion, roundsCount = 3) => {
   // Приветсвие и описание
   const userName = greeting();
   console.log(gameDescription);
@@ -13,25 +13,16 @@ const playGame = (gameDescription, generateQuestion, generateIncorrectMessage, r
     // Получаем ответ
     const userAnswer = readlineSync.question('Your answer: ');
     // Сравниваем ответы
-    if (userAnswer === String(correctAnswer)) {
-      console.log('Correct!');
-    } else {
-      // Завершение игры при неправильном ответе
-      // сообщшение имеет 3 варианта, в зависимости от игры, не 1
-      // у even и prime оно немного другое :(
-      const incorrectMessage = generateIncorrectMessage(
-        userAnswer,
-        String(correctAnswer),
-        userName,
-      );
+    if (userAnswer !== String(correctAnswer)) {
+      const incorrectMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
       console.log(incorrectMessage);
-      break;
+      return;
     }
-    // Если это последний раунд, поздравляем пользователя
-    if (round === roundsCount - 1) {
-      console.log(`Congratulations, ${userName}!`);
-    }
+    console.log('Correct!');
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;
+
+

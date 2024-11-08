@@ -26,11 +26,9 @@ const generateQuestion = () => {
 // Задаем сообшения
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `Answer "${userAnswer}" if the number is prime, otherwise answer "${correctAnswer}".\nLet's try again, ${userName}!`;
-
 // Запускаем игру
 const playGamePrime = () => {
-  playGame(gameDescription, generateQuestion, generateIncorrectMessageEvenOdd);
+  playGame(gameDescription, generateQuestion);
 };
 
 export default playGamePrime;

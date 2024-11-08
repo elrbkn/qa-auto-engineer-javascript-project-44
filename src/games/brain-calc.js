@@ -39,11 +39,9 @@ const generateQuestion = () => {
 // Задаем сообшения
 const gameDescription = 'What is the result of the expression?';
 
-const generateIncorrectMessageEvenOdd = (userAnswer, correctAnswer, userName) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-
 // Запускаем игру
 const playGameCalc = () => {
-  playGame(gameDescription, generateQuestion, generateIncorrectMessageEvenOdd);
+  playGame(gameDescription, generateQuestion);
 };
 
 export default playGameCalc;
