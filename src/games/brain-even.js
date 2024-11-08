@@ -14,7 +14,6 @@ const generateQuestion = () => {
 // Задаем сообшения
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-
 // Запускаем игру
 const playGameEven = () => {
   playGame(gameDescription, generateQuestion);

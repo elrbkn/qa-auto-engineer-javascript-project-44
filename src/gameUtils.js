@@ -24,5 +24,3 @@ const playGame = (gameDescription, generateQuestion, roundsCount = 3) => {
 };
 
 export default playGame;
-
-
